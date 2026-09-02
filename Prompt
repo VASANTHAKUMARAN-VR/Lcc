@@ -1,0 +1,624 @@
+Create a complete, production-quality React + TypeScript file/document upload application.
+
+The most important requirement is: the user must be able to select MANY files and documents at the same time using a single file-selection action and upload them together. Do NOT limit the user to selecting only one file.
+
+1. Login Page
+
+Create a professional and responsive login page.
+
+Fields:
+
+Username
+Password
+Show/hide password button
+Login button
+
+Use mock authentication for now:
+
+Username: admin
+Password: admin123
+
+Requirements:
+
+Validate username and password
+Show an error message for incorrect credentials
+Show a loading state while logging in
+After successful login, navigate to the upload dashboard
+Store authentication state so the user cannot directly access the dashboard without logging in
+Provide a Logout button on the dashboard
+2. Dashboard
+
+After login, display a modern dashboard.
+
+Header:
+
+Application name: "Document Upload Portal"
+Logged-in username
+Logout button
+
+Main content:
+
+Large multiple-file upload area
+Selected file counter
+Upload button
+Clear All button
+File list
+Upload progress for every individual file
+3. MULTIPLE FILE SELECTION — VERY IMPORTANT
+
+The file picker MUST support selecting multiple files at the same time.
+
+Use the HTML file input with:
+
+multiple
+
+The user should be able to:
+
+Click "Choose Files"
+Select 1 file
+Select 10 files
+Select 50 files
+Select 100+ files if the browser allows it
+Select different document and file types in the same selection
+Upload all selected files together
+
+Example:
+
+User clicks:
+
+Choose Files
+
+Then selects:
+
+invoice.pdf
+report.docx
+presentation.pptx
+data.xlsx
+image.png
+document.txt
+archive.zip
+contract.pdf
+photo.jpg
+another-report.docx
+
+All selected files must appear in the application immediately.
+
+Do NOT replace the previously selected files when the user selects more files.
+
+If the user opens the file picker again and selects additional files, append the new files to the existing file list.
+
+For example:
+
+First selection:
+10 files
+
+Second selection:
+20 files
+
+Final list:
+30 files
+
+Do not reset the first 10 files.
+
+Also support selecting multiple files using drag-and-drop.
+
+4. Supported File Types
+
+Allow common documents and files:
+
+PDF
+DOC
+DOCX
+XLS
+XLSX
+CSV
+PPT
+PPTX
+TXT
+JPG
+JPEG
+PNG
+GIF
+ZIP
+RAR
+
+Use an appropriate accept attribute, but do not make the UI dependent only on the browser's file filter.
+
+Validate every selected file in React as well.
+
+5. File List
+
+After selecting multiple files, display a professional file table/list.
+
+Each file should show:
+
+Checkbox
+File icon based on file type
+File name
+File extension/type
+File size
+Upload status
+Upload progress
+Percentage
+Remove button
+
+Example:
+
+Select	File	Type	Size	Status	Progress	Action
+✓	invoice.pdf	PDF	2.4 MB	Uploading	65%	Remove
+✓	report.docx	DOCX	1.8 MB	Completed	100%	Remove
+✓	data.xlsx	XLSX	4.2 MB	Waiting	0%	Remove
+6. Select All / Individual Selection
+
+Add:
+
+Select All checkbox
+Individual checkbox for every file
+Selected file count
+
+Example:
+
+25 files selected
+
+The user should be able to:
+
+Select all files
+Unselect all files
+Select individual files
+Remove selected files
+
+Add:
+
+Remove Selected
+
+button.
+
+Also add:
+
+Clear All
+
+button.
+
+Before clearing all files, optionally show a confirmation dialog.
+
+7. Upload ALL Files
+
+Create an Upload All button.
+
+When clicked:
+
+Upload every selected file
+Process multiple files
+Do not freeze the UI
+Show individual progress for every file
+Show overall upload progress
+
+Display:
+
+Uploading 12 of 50 files
+
+and:
+
+Overall Progress: 48%
+
+Each file must have its own progress bar.
+
+Example:
+
+invoice.pdf
+████████████████████ 100%
+✓ Completed
+
+report.docx
+██████████████░░░░░░ 72%
+Uploading...
+
+data.xlsx
+████░░░░░░░░░░░░░░░░ 20%
+Uploading...
+
+presentation.pptx
+░░░░░░░░░░░░░░░░░░░░ 0%
+Waiting
+
+8. Upload Progress
+
+The progress bar must update dynamically.
+
+For every file maintain:
+
+pending
+uploading
+completed
+failed
+
+Show:
+
+0%
+10%
+25%
+50%
+75%
+100%
+
+Use smooth animated progress bars.
+
+When completed:
+
+✓ Upload completed
+
+When failed:
+
+✕ Upload failed
+
+Provide a:
+
+Retry
+
+button for failed files.
+
+9. Overall Upload Progress
+
+At the top of the upload section show overall progress.
+
+Example:
+
+Uploading Files
+
+15 / 50 files completed
+
+████████████░░░░░░░░ 60%
+
+60% Complete
+
+
+The overall progress should be calculated from the individual file upload progress.
+
+10. Large Number of Files
+
+The application must be designed to handle a large number of selected files.
+
+For example:
+
+10 files
+50 files
+100 files
+500 files
+
+Do not create a separate React component or unnecessary network request that causes the browser to freeze.
+
+Use efficient React state management.
+
+If there are many files, use a scrollable file list.
+
+Optionally implement virtualization for very large lists.
+
+Do not display hundreds of huge cards that make the page unusable.
+
+11. Duplicate File Handling
+
+If the user selects the same file multiple times:
+
+Detect duplicates
+Do not add the same file twice
+Show a small notification:
+
+Some duplicate files were skipped.
+
+If the user intentionally needs two files with the same name from different folders, use a reliable file identity strategy where possible instead of checking only the filename.
+
+12. File Validation
+
+Validate every file before adding it to the upload queue.
+
+Maximum file size:
+
+10 MB per file
+
+If a file is too large:
+
+File exceeds the 10 MB size limit.
+
+If the file type is unsupported:
+
+This file type is not supported.
+
+Invalid files should not enter the upload queue.
+
+Show a clear error/toast notification.
+
+13. Drag and Drop
+
+Create a large drag-and-drop area.
+
+Display:
+
+Drag & Drop Multiple Files Here
+
+or
+
+Choose Files
+
+
+Important:
+
+Drag multiple files at once
+Add all valid dropped files to the existing queue
+Do not remove previously selected files
+Show visual feedback when files are dragged over the drop area
+
+Example:
+
+Drop 25 files here to upload
+
+14. Upload Architecture
+
+For now, there is no real backend.
+
+Create a mock upload service that simulates uploading files.
+
+The mock upload should:
+
+Accept a File object
+Return progress updates
+Randomly simulate realistic upload duration
+Resolve when upload reaches 100%
+Occasionally simulate an error so the failed state can be demonstrated
+
+Keep the upload service separate from the UI so it can easily be replaced later with a real API.
+
+Create something similar to:
+
+uploadFile(file, onProgress)
+
+Later this should be easy to replace with:
+
+POST /api/upload
+
+using FormData.
+
+15. Upload Concurrency
+
+Do not start hundreds of uploads simultaneously.
+
+Implement an upload queue/concurrency limit.
+
+For example:
+
+Maximum 5 files uploading at the same time
+Remaining files stay in Waiting
+When one upload completes, automatically start the next waiting file
+
+The UI should clearly show:
+
+5 files uploading
+
+while other files remain:
+
+Waiting
+
+This is important for handling large numbers of files efficiently.
+
+16. Upload Controls
+
+Provide:
+
+Upload All
+Pause All (if supported by the mock implementation)
+Cancel All
+Retry Failed
+Remove Selected
+Clear All
+
+Disable buttons when appropriate.
+
+For example:
+
+Disable Upload All when no files are selected
+Disable Retry Failed when there are no failed files
+Disable Clear All while confirmation is open
+17. Upload Summary
+
+After uploading, show a summary:
+
+Upload Complete
+
+Total Files: 50
+Successful: 47
+Failed: 3
+Total Size: 186 MB
+
+
+If some files failed:
+
+3 files failed to upload.
+
+Show a:
+
+Retry Failed Files
+
+button.
+
+18. Notifications
+
+Use toast notifications for:
+
+Login successful
+Invalid login
+Files added
+Duplicate files skipped
+Invalid file type
+File too large
+Upload started
+File upload completed
+Upload failed
+All uploads completed
+19. Responsive Design
+
+The application must work properly on:
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+On desktop, show the file table.
+
+On smaller screens, transform each file into a responsive file card.
+
+Do not allow the table to break the mobile layout.
+
+20. Design
+
+Use a professional SaaS-style interface.
+
+Technology:
+
+React
+TypeScript
+Tailwind CSS
+React Router
+Lucide React icons
+Toast notifications
+
+Use:
+
+Blue/indigo primary color
+White cards
+Light gray background
+Rounded corners
+Subtle shadows
+Clean typography
+Good spacing
+Accessible controls
+
+The upload area should be visually prominent.
+
+21. Suggested React Components
+
+Organize the application into reusable components:
+
+src/
+  components/
+    LoginForm.tsx
+    DashboardHeader.tsx
+    FileDropZone.tsx
+    FilePicker.tsx
+    FileTable.tsx
+    FileRow.tsx
+    FileCard.tsx
+    UploadProgress.tsx
+    OverallProgress.tsx
+    UploadSummary.tsx
+    UploadControls.tsx
+
+  pages/
+    LoginPage.tsx
+    DashboardPage.tsx
+
+  services/
+    mockUploadService.ts
+
+  hooks/
+    useFileUpload.ts
+
+  types/
+    upload.ts
+
+  App.tsx
+
+22. Important Functional Requirement
+
+The final application MUST demonstrate this exact workflow:
+
+Login
+  ↓
+Dashboard
+  ↓
+Click "Choose Files"
+  ↓
+Select MANY files at the same time
+  ↓
+All files appear in the queue
+  ↓
+Select/deselect files
+  ↓
+Click "Upload All"
+  ↓
+Maximum 5 files upload simultaneously
+  ↓
+Each file gets its own progress bar
+  ↓
+Overall progress is displayed
+  ↓
+Completed / Failed status shown
+  ↓
+Retry failed files if necessary
+  ↓
+Upload summary displayed
+
+23. Important Implementation Details
+
+Do NOT implement this as a single-file uploader.
+
+The file input must support:
+
+<input
+  type="file"
+  multiple
+  onChange={handleFileSelect}
+/>
+
+
+When onChange fires, add the newly selected files to the existing file queue instead of replacing the queue.
+
+The application must support:
+
+Select 1 file
+Select 10 files
+Select 50 files
+Select 100+ files
+
+
+in one selection.
+
+Also support adding more files later:
+
+Initial queue: 20 files
+
+Choose Files again
++ 30 new files
+
+Final queue: 50 files
+
+
+The existing 20 files must remain.
+
+24. Final Requirement
+
+Generate the complete working React application, not just a visual mockup.
+
+Every major interaction must work:
+
+Login
+Logout
+Multiple file selection
+Multiple file drag and drop
+Add more files
+File validation
+Duplicate detection
+Select all
+Individual selection
+Remove files
+Clear all
+Upload all
+Upload concurrency limit
+Individual progress bars
+Overall progress
+Completed status
+Failed status
+Retry failed files
+Upload summary
+Responsive UI
+
+Make the code clean, reusable, and ready to connect to a real backend upload API later.
