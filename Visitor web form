@@ -1,0 +1,1264 @@
+Act as a Senior UI/UX Designer, Product Designer, and Senior React Frontend Developer.
+
+Design and build a world-class PREMIUM VISITOR MANAGEMENT WEB APPLICATION using React.js.
+
+The application should replace an old legacy desktop visitor-management interface with a modern, clean, professional, responsive web application.
+
+IMPORTANT:
+Use the uploaded existing visitor-management screenshot as a functional reference for the fields and workflow, but DO NOT copy its old visual design.
+
+Create a completely modern UI with:
+- Premium enterprise SaaS appearance
+- Clean layouts
+- Excellent spacing
+- Modern typography
+- Professional colors
+- Rounded cards
+- Subtle shadows
+- Clear hierarchy
+- Smooth interactions
+- Responsive design
+- Mobile-first approach
+- Tablet optimized
+- Desktop optimized
+
+TECH STACK:
+- React.js
+- React Router
+- Tailwind CSS
+- Component-based architecture
+- Lucide React icons
+- Modern form components
+- Responsive CSS
+- Reusable components
+- Mock API/data layer for frontend demonstration
+- QR code generation
+- Camera/photo capture support
+- Image preview
+- Form validation
+
+====================================================
+1. APPLICATION PURPOSE
+====================================================
+
+This is a Visitor Management System.
+
+A visitor comes to the company's visitor website.
+
+The visitor should be able to:
+
+1. Enter the employee/visitee Email ID.
+2. System automatically fetches the employee details.
+3. Display:
+   - Visitee Name
+   - Employee ID
+   - Department
+   - Employee Mobile Number
+   - Employee Photo
+4. Visitor enters their own details.
+5. Visitor can capture/upload their photo.
+6. Visitor reviews all information.
+7. Visitor submits the visit request.
+8. System generates a unique Visitor ID.
+9. System generates a QR Code.
+10. Show a successful registration screen.
+11. If the visitor has visited previously, they can enter their Mobile Number.
+12. System automatically loads their previous details.
+13. Visitor can edit/update those details before submitting a new visit.
+
+====================================================
+2. BRAND / VISUAL STYLE
+====================================================
+
+Create a premium enterprise visitor-management product.
+
+Visual direction:
+
+- Modern corporate SaaS
+- Minimal
+- Premium
+- Clean
+- Professional
+- Trustworthy
+- Secure
+- Easy to use
+- Not overly colorful
+- Avoid old ERP/software appearance
+
+Suggested visual system:
+
+Primary:
+Deep Navy / Professional Blue
+
+Secondary:
+Modern Blue
+
+Accent:
+Teal or Cyan
+
+Success:
+Green
+
+Warning:
+Amber
+
+Error:
+Red
+
+Background:
+Very light neutral gray/white
+
+Cards:
+White
+
+Text:
+Dark navy / charcoal
+
+Use subtle gradients only where appropriate.
+
+Typography:
+Inter / Geist / Manrope style modern sans-serif.
+
+Use:
+- 14px–16px body text
+- 24px–32px page headings
+- 18px–20px section headings
+- Strong labels
+- Excellent line height
+
+Border radius:
+10px–16px.
+
+Use subtle shadows instead of heavy borders.
+
+====================================================
+3. RESPONSIVE DESIGN
+====================================================
+
+The application MUST work perfectly on:
+
+Mobile:
+320px – 767px
+
+Tablet:
+768px – 1023px
+
+Desktop:
+1024px+
+
+Large desktop:
+1440px+
+
+DO NOT simply shrink the desktop layout.
+
+Create responsive layouts specifically for each breakpoint.
+
+Mobile:
+- Single column
+- Large touch-friendly inputs
+- Sticky bottom action button where useful
+- Camera capture optimized for mobile
+- Employee photo displayed in compact card
+- QR code centered
+- Easy navigation
+
+Tablet:
+- Two-column layout where appropriate
+
+Desktop:
+- Two-column professional dashboard/form layout
+- Maximum content width around 1200–1400px
+- Comfortable whitespace
+
+====================================================
+4. LANDING / WELCOME SCREEN
+====================================================
+
+Create a premium visitor registration landing screen.
+
+Header:
+
+Left:
+Company logo
+
+Center/Navigation:
+Visitor Registration
+
+Right:
+Help
+Language selector
+
+Main hero card:
+
+"Welcome to [Company Name]"
+
+Subtitle:
+
+"Register your visit quickly and securely."
+
+Two large action cards:
+
+CARD 1:
+"New Visitor"
+Icon: User Plus
+
+Description:
+"Register your visit using the employee's email ID."
+
+Button:
+"Start Registration"
+
+CARD 2:
+"Returning Visitor"
+Icon: Rotate / User Check
+
+Description:
+"Already registered? Use your mobile number to continue."
+
+Button:
+"Continue with Mobile"
+
+Below:
+Security / privacy indicator
+
+"Your information is securely processed."
+
+====================================================
+5. NEW VISITOR REGISTRATION
+====================================================
+
+Create a multi-step visitor registration flow.
+
+Progress indicator:
+
+STEP 1
+Visitee
+
+STEP 2
+Visitor Details
+
+STEP 3
+Photo
+
+STEP 4
+Review
+
+STEP 5
+Success
+
+Use a clean stepper.
+
+====================================================
+6. STEP 1 — VISITEE DETAILS
+====================================================
+
+Heading:
+
+"Who are you visiting?"
+
+Subtitle:
+
+"Enter the employee's official email address to continue."
+
+Input:
+
+Employee Email ID *
+
+Placeholder:
+employee@company.com
+
+Button:
+
+"Find Employee"
+
+After valid email:
+
+Automatically retrieve employee details.
+
+Display a premium Employee Information Card.
+
+Card:
+
+EMPLOYEE
+
+Employee Photo
+
+Visitee Name
+Sivakumar G
+
+Employee ID
+7859
+
+Department
+LMW - IT
+
+Mobile Number
+7397775905
+
+Email
+sivakumar.g1@lmw.co.in
+
+The visitor MUST NOT manually enter these employee details.
+
+These fields should be automatically populated based on Email ID.
+
+Add:
+✓ Employee found
+
+Allow:
+"Change employee"
+
+====================================================
+7. STEP 2 — RETURNING VISITOR
+====================================================
+
+Create an alternative flow:
+
+Heading:
+
+"Welcome back"
+
+Subtitle:
+
+"Enter your mobile number to retrieve your previous visitor details."
+
+Input:
+
+Visitor Mobile Number *
+
+Button:
+
+"Find My Details"
+
+If mobile number exists:
+
+Automatically populate:
+
+Visitor Name
+Visitor Company
+Purpose
+Visitor Type
+ID Proof
+ID Proof Number
+Email ID
+Visit Type
+
+Display:
+
+"Previous details found"
+
+Allow visitor to edit every visitor field.
+
+Important:
+
+Previous details should NEVER lock the user.
+
+Visitor can edit/update them.
+
+Button:
+
+"Continue"
+
+If no record found:
+
+Show:
+
+"No previous visitor record found."
+
+Then offer:
+
+"Register as New Visitor"
+
+====================================================
+8. STEP 3 — VISITOR DETAILS
+====================================================
+
+Create a premium form divided into logical sections.
+
+SECTION:
+"Personal Information"
+
+Fields:
+
+Visitor Mobile Number *
+Visitor Name *
+Visitor Company *
+Email ID
+
+SECTION:
+"Visit Information"
+
+Purpose *
+Visitor Type *
+Visit Type *
+Duration (Hours) *
+
+Purpose should be a dropdown.
+
+Example options:
+- Official
+- Meeting
+- Interview
+- Delivery
+- Supplier
+- Service
+- Personal
+- Other
+
+Visitor Type examples:
+- Guest
+- Supplier
+- Contractor
+- Customer
+- Vendor
+- Interview Candidate
+- Other
+
+Visit Type:
+
+Single
+Multiple
+
+SECTION:
+"Identity Verification"
+
+ID Proof *
+
+Dropdown:
+
+Aadhaar Card
+PAN Card
+Driving Licence
+Passport
+Voter ID
+Other
+
+IMPORTANT DYNAMIC FIELD:
+
+If user selects:
+
+PAN Card
+
+Display:
+
+PAN Card Number *
+
+If user selects:
+
+Aadhaar Card
+
+Display:
+
+Aadhaar Number *
+
+If Driving Licence:
+
+Driving Licence Number *
+
+If Passport:
+
+Passport Number *
+
+Use appropriate validation and input formatting.
+
+====================================================
+9. EMAIL FIELD
+====================================================
+
+Visitor Email ID should have:
+
+Email validation.
+
+Show inline validation:
+
+✓ Valid email
+
+or
+
+"Please enter a valid email address."
+
+====================================================
+10. VISIT DATE / VALIDITY
+====================================================
+
+Create a modern date/time section.
+
+Fields:
+
+Validity From *
+Validity To *
+
+Use modern date picker.
+
+Also provide:
+
+Visit Date
+
+Expected Arrival Time
+
+Duration
+
+Prevent invalid date/time combinations.
+
+====================================================
+11. BADGE INFORMATION
+====================================================
+
+Create:
+
+Badge ID
+
+This can be automatically assigned by the system.
+
+Display:
+
+Badge ID
+VST-0248
+
+Status:
+Ready
+
+Make it visually clear.
+
+====================================================
+12. ADDITIONAL DETAILS
+====================================================
+
+Create optional fields:
+
+Laptop Details
+Mobile Details
+Other Details
+
+Use expandable "Additional Information" section so the main form remains clean.
+
+====================================================
+13. VISITOR PHOTO CAPTURE
+====================================================
+
+Create a premium photo capture component.
+
+Heading:
+
+"Take your photo"
+
+Options:
+
+[ Open Camera ]
+
+[ Upload Photo ]
+
+On mobile:
+Use device camera.
+
+Desktop:
+Allow webcam/photo upload.
+
+After capturing:
+
+Display image preview.
+
+Actions:
+
+Retake
+Remove
+Use This Photo
+
+Show a professional photo frame.
+
+Example:
+
+┌─────────────────────┐
+│                     │
+│     VISITOR PHOTO   │
+│                     │
+│       PHOTO         │
+│                     │
+└─────────────────────┘
+
+Make the camera UI mobile friendly.
+
+====================================================
+14. FORM VALIDATION
+====================================================
+
+Every required field must clearly show:
+
+*
+
+Required
+
+Use inline validation.
+
+Examples:
+
+Visitor Name:
+"Visitor name is required."
+
+Mobile:
+"Enter a valid 10-digit mobile number."
+
+PAN:
+"Enter a valid PAN number."
+
+Email:
+"Enter a valid email address."
+
+Do not show errors aggressively.
+
+Validate fields when:
+- User leaves the field
+- User submits
+- Invalid data is entered
+
+====================================================
+15. REVIEW SCREEN
+====================================================
+
+Before final submission create:
+
+"Review Your Visit"
+
+Display two major cards.
+
+CARD 1:
+
+EMPLOYEE DETAILS
+
+Employee Photo
+
+Visitee Name
+Employee ID
+Department
+Mobile
+Email
+
+CARD 2:
+
+VISITOR DETAILS
+
+Visitor Photo
+
+Visitor Name
+Mobile
+Company
+Email
+Purpose
+Visitor Type
+ID Proof
+ID Proof Number
+Visit Type
+Duration
+Validity From
+Validity To
+Badge ID
+
+Every section should have:
+
+Edit
+
+button.
+
+At bottom:
+
+Checkbox:
+
+"I confirm that the information provided is correct."
+
+Button:
+
+"Submit Registration"
+
+====================================================
+16. SUBMISSION LOADING
+====================================================
+
+When submitting:
+
+Show premium loading state.
+
+Example:
+
+Registering your visit...
+
+Animated progress indicator.
+
+Do not freeze the interface.
+
+====================================================
+17. SUCCESS SCREEN
+====================================================
+
+After successful submission create a beautiful success screen.
+
+Large success icon:
+
+✓
+
+Heading:
+
+"Visit Registered Successfully"
+
+Subtitle:
+
+"Your visitor registration has been completed."
+
+Display:
+
+Visitor ID
+
+VST-20260915-00482
+
+Badge ID
+
+BADGE-0248
+
+Visitee
+
+Sivakumar G
+
+Visit Date
+
+15 September 2026
+
+====================================================
+18. QR CODE
+====================================================
+
+Generate a QR Code automatically.
+
+QR Code should contain the unique visitor registration information.
+
+Display:
+
+"Your Visitor QR Code"
+
+Large QR code.
+
+Below:
+
+"Please show this QR code at the reception/security desk."
+
+Buttons:
+
+Download QR
+Print
+Share
+
+On mobile:
+
+Share button should use native sharing where supported.
+
+====================================================
+19. VISITOR ID
+====================================================
+
+Generate a unique ID after successful submission.
+
+Example:
+
+VST-20260915-00482
+
+Never duplicate Visitor IDs.
+
+Show it prominently.
+
+Allow:
+
+Copy Visitor ID
+
+====================================================
+20. SUCCESS ACTIONS
+====================================================
+
+Buttons:
+
+Download Pass
+
+Download QR
+
+Print Visitor Pass
+
+Register Another Visitor
+
+Back to Home
+
+====================================================
+21. DIGITAL VISITOR PASS
+====================================================
+
+Create a premium digital visitor pass.
+
+Pass should contain:
+
+Company Logo
+
+VISITOR PASS
+
+Visitor Photo
+
+Visitor Name
+
+Visitor ID
+
+Company
+
+Visitee Name
+
+Department
+
+Visit Date
+
+Valid Until
+
+Badge ID
+
+QR Code
+
+Status:
+
+APPROVED / REGISTERED
+
+Use a professional ID-card/pass design.
+
+====================================================
+22. DESKTOP LAYOUT
+====================================================
+
+Desktop registration page:
+
+Top header
+
+Left:
+Visitor registration form
+
+Right:
+Sticky summary card
+
+Right summary:
+
+Employee
+Employee photo
+Employee name
+Department
+
+Visitor
+Visitor name
+Company
+Visit date
+
+Photo preview
+
+Progress
+
+Make the form comfortable and spacious.
+
+====================================================
+23. MOBILE LAYOUT
+====================================================
+
+On mobile:
+
+Header:
+
+Logo
+Menu icon
+
+Progress stepper
+
+Form
+
+Employee card
+
+Visitor form
+
+Photo capture
+
+Review
+
+Sticky bottom CTA:
+
+Continue
+
+or
+
+Submit Registration
+
+Do NOT use horizontal scrolling.
+
+Everything must fit within mobile viewport.
+
+====================================================
+24. UI COMPONENTS
+====================================================
+
+Create reusable React components:
+
+Header
+Footer
+Stepper
+EmployeeCard
+VisitorForm
+Input
+Select
+DatePicker
+PhotoCapture
+CameraModal
+ReviewCard
+QRCodeCard
+SuccessCard
+VisitorPass
+Modal
+Toast
+LoadingState
+EmptyState
+ErrorState
+
+====================================================
+25. REACT COMPONENT STRUCTURE
+====================================================
+
+Use a clean React architecture.
+
+Example:
+
+src/
+
+components/
+  Header.jsx
+  Stepper.jsx
+  EmployeeCard.jsx
+  VisitorForm.jsx
+  PhotoCapture.jsx
+  ReviewCard.jsx
+  QRCodeCard.jsx
+  VisitorPass.jsx
+  LoadingState.jsx
+
+pages/
+  Home.jsx
+  NewVisitor.jsx
+  ReturningVisitor.jsx
+  Success.jsx
+
+services/
+  employeeService.js
+  visitorService.js
+
+hooks/
+  useVisitorForm.js
+  useCamera.js
+
+utils/
+  validation.js
+  visitorId.js
+
+data/
+  mockEmployees.js
+  mockVisitors.js
+
+====================================================
+26. MOCK API BEHAVIOUR
+====================================================
+
+Since this is a frontend prototype, create mock API functions.
+
+Example:
+
+GET employee by email
+
+/api/employees?email=sivakumar.g1@lmw.co.in
+
+Return:
+
+{
+  name: "Sivakumar G",
+  employeeId: "7859",
+  department: "LMW - IT",
+  mobile: "7397775905",
+  email: "sivakumar.g1@lmw.co.in",
+  photo: "..."
+}
+
+Returning visitor:
+
+GET visitor by mobile
+
+/api/visitors?mobile=9600831833
+
+Return previous visitor details.
+
+Submit:
+
+POST /api/visitors
+
+Generate:
+
+visitorId
+badgeId
+qrCode
+
+====================================================
+27. SMART FORM BEHAVIOUR
+====================================================
+
+Implement:
+
+Email lookup
+
+Mobile lookup
+
+Auto-fill
+
+Dynamic ID proof fields
+
+Photo capture
+
+Image preview
+
+Edit previous visitor information
+
+Date validation
+
+Mobile validation
+
+Email validation
+
+Duplicate prevention
+
+Unique Visitor ID generation
+
+QR generation
+
+Loading states
+
+Success states
+
+Error states
+
+Toast notifications
+
+====================================================
+28. SECURITY / PRIVACY UI
+====================================================
+
+Include subtle security indicators.
+
+Example:
+
+🔒 Your visitor information is securely processed.
+
+Do not expose unnecessary employee information.
+
+Mask sensitive ID numbers where appropriate.
+
+Example:
+
+XXXXX7543J
+
+Allow controlled viewing/editing.
+
+====================================================
+29. PREMIUM MICRO INTERACTIONS
+====================================================
+
+Add subtle animations:
+
+Card fade-in
+
+Step transition
+
+Button hover
+
+Input focus
+
+Success animation
+
+QR appearance animation
+
+Photo preview animation
+
+Loading animation
+
+Toast animation
+
+Keep animations fast and professional.
+
+Avoid excessive animation.
+
+====================================================
+30. ACCESSIBILITY
+====================================================
+
+Follow accessibility best practices.
+
+Use:
+
+Proper labels
+
+Keyboard navigation
+
+Visible focus states
+
+ARIA labels
+
+Good contrast
+
+Large touch targets
+
+Accessible error messages
+
+Screen-reader-friendly form structure
+
+====================================================
+31. DESIGN SYSTEM
+====================================================
+
+Create a reusable design system.
+
+Components:
+
+Buttons:
+Primary
+Secondary
+Outline
+Danger
+Success
+
+Inputs:
+Default
+Focus
+Error
+Disabled
+Success
+
+Cards:
+Default
+Elevated
+Interactive
+
+Badges:
+Success
+Pending
+Warning
+Error
+
+Use consistent spacing:
+
+4
+8
+12
+16
+20
+24
+32
+40
+48
+
+====================================================
+32. IMPORTANT UI REQUIREMENT
+====================================================
+
+The uploaded old visitor-management screenshot is ONLY a functional reference.
+
+Do NOT reproduce:
+
+- Old toolbar
+- Old table-like layout
+- Old gray UI
+- Tiny text
+- Desktop-only design
+- Legacy ERP appearance
+- Dense form arrangement
+
+Instead transform it into:
+
+A modern premium SaaS-style visitor registration experience.
+
+====================================================
+33. FINAL USER EXPERIENCE
+====================================================
+
+The final experience should feel like:
+
+"Modern airport / corporate reception / premium enterprise visitor management."
+
+The visitor should understand what to do without training.
+
+The entire registration should ideally take:
+
+1–2 minutes.
+
+The interface should feel:
+
+Fast
+Simple
+Secure
+Premium
+Professional
+Trustworthy
+Modern
+
+====================================================
+34. FINAL SCREENS TO DESIGN
+====================================================
+
+Create these complete screens:
+
+1. Welcome / Landing
+2. New Visitor – Employee Email
+3. Employee Found
+4. Returning Visitor – Mobile Lookup
+5. Previous Visitor Found
+6. Visitor Personal Details
+7. Visit Details
+8. ID Proof Selection
+9. Dynamic ID Number
+10. Photo Capture
+11. Photo Preview
+12. Review Details
+13. Submission Loading
+14. Registration Success
+15. QR Code
+16. Digital Visitor Pass
+17. Error State
+18. Employee Not Found
+19. Visitor Not Found
+20. Mobile Responsive Version
+21. Tablet Responsive Version
+22. Desktop Responsive Version
+
+====================================================
+35. OUTPUT
+====================================================
+
+Create a complete high-fidelity responsive React frontend prototype.
+
+Use realistic sample data.
+
+Ensure every button and interaction works in the prototype.
+
+Use reusable React components.
+
+Use clean code.
+
+Use modern responsive Tailwind CSS.
+
+Make the final design production-ready in appearance.
+
+The most important priorities are:
+
+1. Excellent UX
+2. Mobile responsiveness
+3. Clean premium UI
+4. Simple visitor registration
+5. Employee email auto-fill
+6. Returning visitor mobile auto-fill
+7. Editable previous visitor data
+8. Photo capture
+9. QR generation
+10. Unique visitor ID
+11. Professional digital visitor pass
+12. Accessibility
+13. Validation
+14. Smooth user flow
